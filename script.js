@@ -1,74 +1,79 @@
 const hamburger = document.getElementById("hamburger");
 const navMenu = document.getElementById("navMenu");
- const categoryBtns = document.querySelectorAll(".category-btn");
-      const doctorCards = document.querySelectorAll(".doctor-card");
-      const searchInput = document.getElementById("searchInput");
-      const doctorsGrid = document.getElementById("doctorsGrid");
-      
-      // Function to show no results message
-      function showNoResults() {
-        let noResults = document.querySelector('.no-results');
-        if (!noResults) {
-          noResults = document.createElement('div');
-          noResults.className = 'no-results';
-          noResults.textContent = 'No doctors found matching your criteria.';
-          doctorsGrid.appendChild(noResults);
-        }
-      }
-      
-      // Function to hide no results message
-      function hideNoResults() {
-        const noResults = document.querySelector('.no-results');
-        if (noResults) {
-          noResults.remove();
-        }
-      }
-      
-      // Function to filter doctors
-      function filterDoctors() {
-        const selectedCategory = document.querySelector('.category-btn.active').dataset.category;
-        const searchQuery = searchInput.value.toLowerCase();
-        
-        let visibleCount = 0;
-        
-        doctorCards.forEach((card) => {
-          const cardCategory = card.dataset.category;
-          const name = card.querySelector('.doctor-name').textContent.toLowerCase();
-          const specialty = card.querySelector('.doctor-specialty').textContent.toLowerCase();
-          
-          const categoryMatch = selectedCategory === 'all' || cardCategory === selectedCategory;
-          const searchMatch = name.includes(searchQuery) || specialty.includes(searchQuery);
-          
-          if (categoryMatch && searchMatch) {
-            card.style.display = 'block';
-            visibleCount++;
-          } else {
-            card.style.display = 'none';
-          }
-        });
-        
-        // Show/hide no results message
-        if (visibleCount === 0) {
-          showNoResults();
-        } else {
-          hideNoResults();
-        }
-      }
-      
-      // Initialize - show all doctors
-      filterDoctors();
-      
-      // Category button event listeners
-      categoryBtns.forEach((btn) => {
-        btn.addEventListener("click", () => {
-          categoryBtns.forEach((b) => b.classList.remove("active"));
-          btn.classList.add("active");
-          filterDoctors();
-        });
-      });
-      
-      // Search input event listener
-      searchInput.addEventListener("keyup", filterDoctors);
+const categoryBtns = document.querySelectorAll(".category-btn");
+const doctorCards = document.querySelectorAll(".doctor-card");
+const searchInput = document.getElementById("searchInput");
+const doctorsGrid = document.getElementById("doctorsGrid");
+
+// Function to show no results message
+function showNoResults() {
+  let noResults = document.querySelector(".no-results");
+  if (!noResults) {
+    noResults = document.createElement("div");
+    noResults.className = "no-results";
+    noResults.textContent = "No doctors found matching your criteria.";
+    doctorsGrid.appendChild(noResults);
+  }
+}
+
+// Function to hide no results message
+function hideNoResults() {
+  const noResults = document.querySelector(".no-results");
+  if (noResults) {
+    noResults.remove();
+  }
+}
+
+// Function to filter doctors
+function filterDoctors() {
+  const selectedCategory = document.querySelector(".category-btn.active")
+    .dataset.category;
+  const searchQuery = searchInput.value.toLowerCase();
+
+  let visibleCount = 0;
+
+  doctorCards.forEach((card) => {
+    const cardCategory = card.dataset.category;
+    const name = card.querySelector(".doctor-name").textContent.toLowerCase();
+    const specialty = card
+      .querySelector(".doctor-specialty")
+      .textContent.toLowerCase();
+
+    const categoryMatch =
+      selectedCategory === "all" || cardCategory === selectedCategory;
+    const searchMatch =
+      name.includes(searchQuery) || specialty.includes(searchQuery);
+
+    if (categoryMatch && searchMatch) {
+      card.style.display = "block";
+      visibleCount++;
+    } else {
+      card.style.display = "none";
+    }
+  });
+
+  // Show/hide no results message
+  if (visibleCount === 0) {
+    showNoResults();
+  } else {
+    hideNoResults();
+  }
+}
+
+// Initialize - show all doctors
+filterDoctors();
+
+// Category button event listeners
+categoryBtns.forEach((btn) => {
+  btn.addEventListener("click", () => {
+    categoryBtns.forEach((b) => b.classList.remove("active"));
+    btn.classList.add("active");
+    filterDoctors();
+  });
+});
+
+// Search input event listener
+searchInput.addEventListener("keyup", filterDoctors);
 
 hamburger.addEventListener("click", () => {
   navMenu.classList.toggle("active");
@@ -171,3 +176,32 @@ document
 
 window.addEventListener("scroll", animateOnScroll);
 animateOnScroll();
+let index = 0;
+const slides = document.querySelectorAll(".slides img");
+const dots = document.querySelectorAll(".dot");
+
+function showSlide(i) {
+  slides.forEach((slide, n) => {
+    slide.classList.toggle("active", n === i);
+    dots[n].classList.toggle("active", n === i);
+  });
+}
+
+function nextSlide() {
+  index = (index + 1) % slides.length;
+  showSlide(index);
+}
+
+// Auto slide every 4 seconds
+setInterval(nextSlide, 4000);
+
+// Dot navigation
+dots.forEach((dot, i) => {
+  dot.addEventListener("click", () => {
+    index = i;
+    showSlide(index);
+  });
+});
+
+// Initialize
+showSlide(index);
