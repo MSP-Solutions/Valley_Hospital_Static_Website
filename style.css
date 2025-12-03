@@ -412,10 +412,13 @@ top: 55px;
   margin-bottom: 20px;
   width: 100%;
 }
+.content{
+display: flex;
+gap: 20px;        /* spacing between items */
+ margin: 0px 300px;
+ justify-content: space-between;
+align-items: center; /* optional */
 
-.team-description {
-  margin-bottom: 16px;
-  line-height: 1.7;
 }
 
 .chairman-message {
@@ -423,11 +426,6 @@ top: 55px;
   font-style: italic;
 }
 
-.team-cards {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 20px;
-}
 
 
 /* ===================================== */
@@ -444,14 +442,6 @@ top: 55px;
     border-radius: 36px;
   }
 
-  .team-top {
-    flex-direction: column;
-    text-align: center;
-  }
-
-  .team-cards {
-    justify-content: center;
-  }
 }
 
 @media (max-width: 768px) {
@@ -480,10 +470,7 @@ top: 55px;
     height: 240px;
   }
 
-  .team-cards {
-    flex-direction: column;
-    align-items: center;
-  }
+
 }
 
     /* Services Section */
@@ -601,7 +588,95 @@ top: 55px;
       font-size: 0.9rem;
       line-height: 1.6;
     }
-    
+    /* Team of Valley Hospital */
+.team-wrapper {
+  width: 100%;
+  padding: 40px 80px;
+}
+
+.team-top {
+  display: flex;
+  gap: 30px;
+  justify-content: flex-end;
+  width: 100%;
+}
+
+.team-top .content {
+  max-width: 100%;
+  display: flex;
+  flex-direction: row;
+  gap: 150px; 
+}
+
+.team-title {
+  font-size: 28px;
+  color: #F39C12;  
+  font-weight: 700;
+}
+
+.team-text {
+  color: #555;
+  line-height: 1.8;
+  font-size: 15px;
+}
+
+/* Team Cards */
+.team-cards {
+  margin-top: 40px;
+  display: grid;
+  
+  grid-template-columns: repeat(4, 1fr);
+  gap: 40px;
+}
+
+.team-card {
+  text-align: center;
+}
+
+.team-card img {
+  width: 80%;
+  height: 200px;
+  object-fit: cover;
+  border-radius: 22px;
+}
+
+.team-name {
+  margin-top: 14px;
+  font-size: 16px;
+  font-weight: 500;
+  background: #fff;
+  border: 1px solid #ddd;
+  padding: 8px 17px;
+  display: inline-block;
+  border-radius: 20px;
+}
+
+.team-role {
+  margin-top: 6px;
+  color: #777;
+}
+
+/* Responsive */
+@media(max-width: 992px) {
+  .team-cards {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media(max-width: 600px) {
+  .team-cards {
+    grid-template-columns: 1fr;
+  }
+
+  .team-wrapper {
+    padding: 20px;
+  }
+
+  .team-title {
+    font-size: 22px;
+  }
+}
+
     /* Why Choose Us */
 .why-choose-section {
   width: 100%;
