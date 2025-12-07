@@ -1,33 +1,52 @@
+// ======================= NAVBAR & MENU ==========================
 const hamburger = document.getElementById("hamburger");
 const navMenu = document.getElementById("navMenu");
+const navLinks = document.querySelectorAll(".nav-link");
+
+hamburger.addEventListener("click", () => {
+  navMenu.classList.toggle("active");
+  hamburger.innerHTML = navMenu.classList.contains("active")
+    ? '<i class="fas fa-times"></i>'
+    : '<i class="fas fa-bars"></i>';
+});
+
+// Close menu when clicking nav links
+navLinks.forEach((link) => {
+  link.addEventListener("click", () => {
+    navMenu.classList.remove("active");
+    hamburger.innerHTML = '<i class="fas fa-bars"></i>';
+
+    navLinks.forEach((item) => item.classList.remove("active"));
+    link.classList.add("active");
+  });
+});
+
+// ======================= CATEGORY FILTER ==========================
 const categoryBtns = document.querySelectorAll(".category-btn");
 const doctorCards = document.querySelectorAll(".doctor-card");
 const searchInput = document.getElementById("searchInput");
 const doctorsGrid = document.getElementById("doctorsGrid");
 
-// Function to show no results message
+// Show no results message
 function showNoResults() {
-  let noResults = document.querySelector(".no-results");
-  if (!noResults) {
-    noResults = document.createElement("div");
+  if (!document.querySelector(".no-results")) {
+    const noResults = document.createElement("div");
     noResults.className = "no-results";
     noResults.textContent = "No doctors found matching your criteria.";
     doctorsGrid.appendChild(noResults);
   }
 }
 
-// Function to hide no results message
+// Hide no results message
 function hideNoResults() {
   const noResults = document.querySelector(".no-results");
-  if (noResults) {
-    noResults.remove();
-  }
+  if (noResults) noResults.remove();
 }
 
-// Function to filter doctors
+// Filter doctors
 function filterDoctors() {
-  const selectedCategory = document.querySelector(".category-btn.active")
-    .dataset.category;
+  const selectedCategory =
+    document.querySelector(".category-btn.active")?.dataset.category || "all";
   const searchQuery = searchInput.value.toLowerCase();
 
   let visibleCount = 0;
@@ -52,18 +71,10 @@ function filterDoctors() {
     }
   });
 
-  // Show/hide no results message
-  if (visibleCount === 0) {
-    showNoResults();
-  } else {
-    hideNoResults();
-  }
+  visibleCount === 0 ? showNoResults() : hideNoResults();
 }
 
-// Initialize - show all doctors
-filterDoctors();
-
-// Category button event listeners
+// Category button handler
 categoryBtns.forEach((btn) => {
   btn.addEventListener("click", () => {
     categoryBtns.forEach((b) => b.classList.remove("active"));
@@ -72,119 +83,80 @@ categoryBtns.forEach((btn) => {
   });
 });
 
-// Search input event listener
+// Search typing
 searchInput.addEventListener("keyup", filterDoctors);
 
-hamburger.addEventListener("click", () => {
-  navMenu.classList.toggle("active");
-  hamburger.innerHTML = navMenu.classList.contains("active")
-    ? '<i class="fas fa-times"></i>'
-    : '<i class="fas fa-bars"></i>';
-});
+// Initialize
+filterDoctors();
 
-// Close menu when clicking on nav links
-const navLinks = document.querySelectorAll(".nav-link");
-navLinks.forEach((link) => {
-  link.addEventListener("click", () => {
-    navMenu.classList.remove("active");
-    hamburger.innerHTML = '<i class="fas fa-bars"></i>';
-
-    // Update active link
-    navLinks.forEach((item) => item.classList.remove("active"));
-    link.classList.add("active");
-  });
-});
-
-categoryBtns.forEach((btn) => {
-  btn.addEventListener("click", () => {
-    categoryBtns.forEach((b) => b.classList.remove("active"));
-    btn.classList.add("active");
-  });
-});
-
-// Show more buttons
-const showMoreBtns = document.querySelectorAll(".show-more-btn");
-
-showMoreBtns.forEach((btn) => {
+// ======================= SHOW MORE BUTTON ==========================
+document.querySelectorAll(".show-more-btn").forEach((btn) => {
   btn.addEventListener("click", () => {
     alert("More content would be loaded here in a real implementation.");
   });
 });
 
-// Book appointment button
-const bookAppointmentBtn = document.querySelector(".book-appointment-btn");
-
-bookAppointmentBtn.addEventListener("click", () => {
-  alert("Appointment booking form would open here in a real implementation.");
-});
-
-// Smooth scrolling for navigation links
+// ======================= SMOOTH SCROLL ==========================
 document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
   anchor.addEventListener("click", function (e) {
     e.preventDefault();
     const target = document.querySelector(this.getAttribute("href"));
     if (target) {
       const headerHeight = document.querySelector(".header").offsetHeight;
-      const targetPosition =
+      const topPos =
         target.getBoundingClientRect().top + window.pageYOffset - headerHeight;
 
-      window.scrollTo({
-        top: targetPosition,
-        behavior: "smooth",
-      });
+      window.scrollTo({ top: topPos, behavior: "smooth" });
     }
   });
 });
 
-// Sticky header
+// ======================= STICKY HEADER ==========================
 window.addEventListener("scroll", () => {
   const header = document.querySelector(".header");
-  if (window.scrollY > 100) {
-    header.style.boxShadow = "0 4px 12px rgba(0, 0, 0, 0.1)";
-  } else {
-    header.style.boxShadow = "0 2px 4px rgba(0, 0, 0, 0.1)";
-  }
+  header.style.boxShadow =
+    window.scrollY > 100
+      ? "0 4px 12px rgba(0, 0, 0, 0.1)"
+      : "0 2px 4px rgba(0, 0, 0, 0.1)";
 });
 
-// Animation on scroll
+// ======================= ANIMATION ON SCROLL ==========================
 const animateOnScroll = () => {
   const elements = document.querySelectorAll(
     ".service-card, .department-card, .doctor-card, .package-card"
   );
 
   elements.forEach((element) => {
-    const elementTop = element.getBoundingClientRect().top;
-    const elementBottom = element.getBoundingClientRect().bottom;
-
-    if (elementTop < window.innerHeight && elementBottom > 0) {
+    const rect = element.getBoundingClientRect();
+    if (rect.top < window.innerHeight && rect.bottom > 0) {
       element.style.opacity = "1";
       element.style.transform = "translateY(0)";
     }
   });
 };
 
-// Initial setup for animation
+// Initial animation setup
 document
   .querySelectorAll(
     ".service-card, .department-card, .doctor-card, .package-card"
   )
-  .forEach((element) => {
-    element.style.opacity = "0";
-    element.style.transform = "translateY(20px)";
-    element.style.transition = "opacity 0.5s ease, transform 0.5s ease";
+  .forEach((el) => {
+    el.style.opacity = "0";
+    el.style.transform = "translateY(20px)";
+    el.style.transition = "opacity 0.5s ease, transform 0.5s ease";
   });
 
 window.addEventListener("scroll", animateOnScroll);
 animateOnScroll();
+
+// ======================= SLIDER ==========================
 let index = 0;
 const slides = document.querySelectorAll(".slides img");
 const dots = document.querySelectorAll(".dot");
 
 function showSlide(i) {
-  slides.forEach((slide, n) => {
-    slide.classList.toggle("active", n === i);
-    dots[n].classList.toggle("active", n === i);
-  });
+  slides.forEach((slide, n) => slide.classList.toggle("active", n === i));
+  dots.forEach((dot, n) => dot.classList.toggle("active", n === i));
 }
 
 function nextSlide() {
@@ -192,16 +164,46 @@ function nextSlide() {
   showSlide(index);
 }
 
-// Auto slide every 4 seconds
 setInterval(nextSlide, 4000);
 
-// Dot navigation
 dots.forEach((dot, i) => {
   dot.addEventListener("click", () => {
     index = i;
-    showSlide(index);
+    showSlide(i);
   });
 });
 
-// Initialize
 showSlide(index);
+
+// ======================= DIALOG (BOOK APPOINTMENT) ==========================
+const openBtn = document.getElementById("openDialogBtn");
+const closeBtn = document.getElementById("closeDialogBtn");
+const overlay = document.getElementById("dialogOverlay");
+const appointmentForm = document.getElementById("appointmentForm");
+
+// Open dialog
+openBtn.addEventListener("click", () => {
+  overlay.style.display = "flex";
+});
+
+// Close dialog
+closeBtn.addEventListener("click", () => {
+  overlay.style.display = "none";
+});
+
+// Close if clicking outside the box
+overlay.addEventListener("click", (e) => {
+  if (e.target === overlay) overlay.style.display = "none";
+});
+
+// Handle form submission
+appointmentForm.addEventListener("submit", (e) => {
+  e.preventDefault();
+  const name = document.getElementById("name").value;
+  const email = document.getElementById("email").value;
+  const phone = document.getElementById("phone").value;
+
+  alert(`Appointment booked!\nName: ${name}\nEmail: ${email}\nPhone: ${phone}`);
+  appointmentForm.reset();
+  overlay.style.display = "none";
+});

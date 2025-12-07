@@ -565,10 +565,26 @@
       </p>
     </div>
 
-    <div class="right-content">
-      <button class="book-appointment-btn">Book Appointment</button>
-    </div>
+   <!-- Book Appointment Button -->
+<div class="right-content">
+  <button id="openDialogBtn" class="book-appointment-btn">Book Appointment</button>
+</div>
 
+<!-- Appointment Dialog -->
+<div class="dialog-overlay" id="dialogOverlay">
+  <div class="dialog-box">
+    <h2><i class="fas fa-calendar-alt"></i> Make an appointment</h2>
+
+    <form id="appointmentForm">
+      <input type="text" id="name" placeholder="Name" required>
+      <input type="email" id="email" placeholder="Email" required>
+      <input type="tel" id="phone" placeholder="Phone" required>
+      <button type="submit">Book Appointment</button>
+    </form>
+
+    <button id="closeDialogBtn" class="close-btn">Close</button>
+  </div>
+</div>
   </div>
 </section>
 
@@ -578,7 +594,7 @@
     <div class="container">
       <div class="footer-content">
         <div class="footer-section">
-          <img src="../home/assets/logo.png" class="footer-logo">
+          <img src="../home/assets/logo1.png" class="footer-logo">
         </div>
         
         <div class="footer-section">
