@@ -15,7 +15,6 @@ navLinks.forEach((link) => {
   link.addEventListener("click", () => {
     navMenu.classList.remove("active");
     hamburger.innerHTML = '<i class="fas fa-bars"></i>';
-
     navLinks.forEach((item) => item.classList.remove("active"));
     link.classList.add("active");
   });
@@ -48,7 +47,6 @@ function filterDoctors() {
   const selectedCategory =
     document.querySelector(".category-btn.active")?.dataset.category || "all";
   const searchQuery = searchInput.value.toLowerCase();
-
   let visibleCount = 0;
 
   doctorCards.forEach((card) => {
@@ -105,7 +103,6 @@ document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
       const headerHeight = document.querySelector(".header").offsetHeight;
       const topPos =
         target.getBoundingClientRect().top + window.pageYOffset - headerHeight;
-
       window.scrollTo({ top: topPos, behavior: "smooth" });
     }
   });
@@ -196,14 +193,33 @@ overlay.addEventListener("click", (e) => {
   if (e.target === overlay) overlay.style.display = "none";
 });
 
-// Handle form submission
+// ======================= EMAILJS INTEGRATION ==========================
+const PUBLIC_KEY = "p9XUkJJF3-8x3P5Yw";
+const SERVICE_ID = "service_d5lwgmc";
+const TEMPLATE_ID = "template_kuxcqkp";
+emailjs.init(PUBLIC_KEY);
+
+// Form submission
 appointmentForm.addEventListener("submit", (e) => {
   e.preventDefault();
-  const name = document.getElementById("name").value;
-  const email = document.getElementById("email").value;
-  const phone = document.getElementById("phone").value;
 
-  alert(`Appointment booked!\nName: ${name}\nEmail: ${email}\nPhone: ${phone}`);
-  appointmentForm.reset();
-  overlay.style.display = "none";
+  const templateParams = {
+    user_name: document.getElementById("name").value,
+    user_email: document.getElementById("email").value,
+    user_phone: document.getElementById("phone").value,
+  };
+
+  // Send email
+  emailjs
+    .send(SERVICE_ID, TEMPLATE_ID, templateParams)
+    .then((response) => {
+      alert("Appointment booked successfully!");
+      appointmentForm.reset();
+      overlay.style.display = "none"; // Close dialog
+      console.log("SUCCESS!", response.status, response.text);
+    })
+    .catch((error) => {
+      alert("Failed to send appointment. Please try again.");
+      console.error("FAILED...", error);
+    });
 });
