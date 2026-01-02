@@ -682,7 +682,7 @@
       .why-choose-section {
         width: 100%;
         padding: 80px 0;
-        background: url('./home/assets/whybg.jpg');
+        background: url('../home/assets/whybg.jpg') no-repeat;
         background-size: cover;
         background-position: center;
       }
@@ -958,7 +958,7 @@
    .appointment-section {
   width: 100%;
   padding: 70px 0;
-  background: url('./home/assets/Appoinment.jpg') center/cover no-repeat;
+  background: url('../home/assets/Appoinment.jpg') center/cover no-repeat;
   color: #1a1a1a;
   position: relative;
 }
