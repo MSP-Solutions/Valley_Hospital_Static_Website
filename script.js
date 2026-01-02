@@ -20,251 +20,72 @@ navLinks.forEach((link) => {
   });
 });
 
-// ======================= DOCTORS DATA & FILTER ==========================
-const doctors = [
-  // Obstetric & Gynecology
-  {
-    name: "Prof. Dr. Saraswati M. Padhye",
-    specialty: "Obstetrician & Gynecologist",
-    category: "Obstetric & Gynecology",
-    image:
-      "https://images.unsplash.com/photo-1559839734-2b71ea197ec2?ixlib=rb-4.0.3&auto=format&fit=crop&w=1470&q=80",
-  },
-  {
-    name: "Dr. Sushila Shrestha",
-    specialty: "Obstetrician & Gynecologist",
-    category: "Obstetric & Gynecology",
-    image: "../home/assets/Dr. Sushila Shrestha.jpeg",
-  },
-  {
-    name: "Dr. Keshari Bajracharya",
-    specialty: "Obstetrician & Gynecologist",
-    category: "Obstetric & Gynecology",
-    image:
-      "https://images.unsplash.com/photo-1612349317150-e413f6a5b16d?ixlib=rb-4.0.3&auto=format&fit=crop&w=1470&q=80",
-  },
-  {
-    name: "Prof. Dr. Chanda Karki (Bhandari)",
-    specialty: "Obstetrician & Gynecologist",
-    category: "Obstetric & Gynecology",
-    image: "../home/assets/aboutus2.png",
-  },
-  {
-    name: "Dr. Bimala Malla",
-    specialty: "Obstetrician & Gynecologist",
-    category: "Obstetric & Gynecology",
-    image: "../home/assets/Dr. Bimala Malla.jpeg",
-  },
-  {
-    name: "Dr. Sudha Thapa",
-    specialty: "Obstetrician & Gynecologist",
-    category: "Obstetric & Gynecology",
-    image: "../home/assets/Dr. Sudha Thapa.jpeg",
-  },
-  {
-    name: "Dr. Amila Shrestha",
-    specialty: "Obstetrician & Gynecologist",
-    category: "Obstetric & Gynecology",
-    image: "../home/assets/Dr. Amila Shrestha.jpeg",
-  },
-  {
-    name: "Dr. Dipti Shrestha",
-    specialty: "Obstetrician & Gynecologist",
-    category: "Obstetric & Gynecology",
-    image:
-      "https://images.unsplash.com/photo-1612349317150-e413f6a5b16d?ixlib=rb-4.0.3&auto=format&fit=crop&w=1470&q=80",
-  },
-  {
-    name: "Dr. Rumina Malla",
-    specialty: "Obstetrician & Gynecologist",
-    category: "Obstetric & Gynecology",
-    image: "../home/assets/Dr. Rumina Malla.jpeg",
-  },
-  {
-    name: "Dr. Rajlaxmi Sharma",
-    specialty: "Obstetrician & Gynecologist",
-    category: "Obstetric & Gynecology",
-    image:
-      "https://images.unsplash.com/photo-1612349317150-e413f6a5b16d?ixlib=rb-4.0.3&auto=format&fit=crop&w=1470&q=80",
-  },
-  {
-    name: "Dr. Noora Pradhan",
-    specialty: "Obstetrician & Gynecologist",
-    category: "Obstetric & Gynecology",
-    image:
-      "https://images.unsplash.com/photo-1612349317150-e413f6a5b16d?ixlib=rb-4.0.3&auto=format&fit=crop&w=1470&q=80",
-  },
-  {
-    name: "Dr. Prekshya Khatri",
-    specialty: "Obstetrician & Gynecologist",
-    category: "Obstetric & Gynecology",
-    image: "../home/assets/Dr. Prekshya Khatri.jpeg",
-  },
-  {
-    name: "Dr. Bibhuti Shahi",
-    specialty: "Obstetrician & Gynecologist",
-    category: "Obstetric & Gynecology",
-    image: "../home/assets/Dr. Bibhuti Shahi.jpeg",
-  },
-
-  // Paediatric
-  {
-    name: "Dr. Shailendra B. Karmachary",
-    specialty: "Pediatric",
-    category: "Paediatric",
-    image:
-      "https://images.unsplash.com/photo-1582750433449-648ed127bb54?ixlib=rb-4.0.3&auto=format&fit=crop&w=687&q=80",
-  },
-  {
-    name: "Dr. Deepa Khanal",
-    specialty: "Pediatric",
-    category: "Paediatric",
-    image: "../home/assets/Dr. Deepa Khanal.jpeg",
-  },
-
-  // Neuro Medicine
-  {
-    name: "Dr. Dipesh Shakya",
-    specialty: "Neurologist",
-    category: "Neuro Medicine",
-    image:
-      "https://images.unsplash.com/photo-1622253692010-333f2da6031d?ixlib=rb-4.0.3&auto=format&fit=crop&w=764&q=80",
-  },
-  {
-    name: "Dr. Sandeep Kumar Jaisawal",
-    specialty: "Neurologist",
-    category: "Neuro Medicine",
-    image:
-      "https://images.unsplash.com/photo-1551601651-2a8555f1a136?ixlib=rb-4.0.3&auto=format&fit=crop&w=687&q=80",
-  },
-
-  // ENT-HNS
-  {
-    name: "Prof. Dr. Mukunda Raj Joshi",
-    specialty: "General Surgery",
-    category: "ENT-HNS",
-    image:
-      "https://images.unsplash.com/photo-1612349317150-e413f6a5b16d?ixlib=rb-4.0.3&auto=format&fit=crop&w=1470&q=80",
-  },
-  {
-    name: "Dr. Manish Gautam",
-    specialty: "General Surgery",
-    category: "ENT-HNS",
-    image: "../home/assets/Dr. Manish Gautam.jpeg",
-  },
-
-  // Cardiology / Dermatology
-  {
-    name: "Dr. Sabina Bhandari",
-    specialty: "Dermatology",
-    category: "Cardiology",
-    image:
-      "https://images.unsplash.com/photo-1582750433449-648ed127bb54?ixlib=rb-4.0.3&auto=format&fit=crop&w=687&q=80",
-  },
-
-  // Ear / Orthopedics
-  {
-    name: "Dr. Deep Sijapati",
-    specialty: "Orthopedic Surgeon",
-    category: "Ear",
-    image: "../home/assets/Dr. Deep Sijapati.jpeg",
-  },
-
-  // Endocrinology
-  {
-    name: "Dr. Deepak Poudel",
-    specialty: "Endocrinology",
-    category: "Endocrinology",
-    image:
-      "https://images.unsplash.com/photo-1622253692010-333f2da6031d?ixlib=rb-4.0.3&auto=format&fit=crop&w=764&q=80",
-  },
-
-  // Pediatric Surgery
-  {
-    name: "Dr. Manish Pokhrel",
-    specialty: "Pediatric Surgery",
-    category: "PediatricSurgery",
-    image: "../home/assets/Dr. Manish Pokhrel.jpeg",
-  },
-];
-
-const categories = [
-  "all",
-  "Obstetric & Gynecology",
-  "Paediatric",
-  "Neuro Medicine",
-  "ENT-HNS",
-  "Cardiology",
-  "Ear",
-  "Endocrinology",
-  "PediatricSurgery",
-];
+// ======================= CATEGORY FILTER ==========================
+const categoryBtns = document.querySelectorAll(".category-btn");
+const doctorCards = document.querySelectorAll(".doctor-card");
+const searchInput = document.getElementById("searchInput");
 const doctorsGrid = document.getElementById("doctorsGrid");
-const categoriesContainer = document.getElementById("categoriesContainer");
-const searchInputDynamic = document.getElementById("searchInput");
-let selectedCategory = "all";
 
-function renderCategories() {
-  categoriesContainer.innerHTML = categories
-    .map(
-      (cat) =>
-        `<button class="category-btn ${
-          selectedCategory === cat ? "active" : ""
-        }" data-category="${cat}">${
-          cat === "all" ? "All Specialties" : cat
-        }</button>`
-    )
-    .join("");
-
-  document
-    .querySelectorAll("#categoriesContainer .category-btn")
-    .forEach((btn) => {
-      btn.addEventListener("click", () => {
-        selectedCategory = btn.dataset.category;
-        renderCategories();
-        renderDoctors();
-      });
-    });
+// Show no results message
+function showNoResults() {
+  if (!document.querySelector(".no-results")) {
+    const noResults = document.createElement("div");
+    noResults.className = "no-results";
+    noResults.textContent = "No doctors found matching your criteria.";
+    doctorsGrid.appendChild(noResults);
+  }
 }
 
-function renderDoctors() {
-  const searchTerm = searchInputDynamic.value.toLowerCase();
-  const filteredDoctors = doctors.filter((doctor) => {
-    const matchesCategory =
-      selectedCategory === "all" || doctor.category === selectedCategory;
-    const matchesSearch =
-      doctor.name.toLowerCase().includes(searchTerm) ||
-      doctor.specialty.toLowerCase().includes(searchTerm);
-    return matchesCategory && matchesSearch;
+// Hide no results message
+function hideNoResults() {
+  const noResults = document.querySelector(".no-results");
+  if (noResults) noResults.remove();
+}
+
+// Filter doctors
+function filterDoctors() {
+  const selectedCategory =
+    document.querySelector(".category-btn.active")?.dataset.category || "all";
+  const searchQuery = searchInput.value.toLowerCase();
+  let visibleCount = 0;
+
+  doctorCards.forEach((card) => {
+    const cardCategory = card.dataset.category;
+    const name = card.querySelector(".doctor-name").textContent.toLowerCase();
+    const specialty = card
+      .querySelector(".doctor-specialty")
+      .textContent.toLowerCase();
+
+    const categoryMatch =
+      selectedCategory === "all" || cardCategory === selectedCategory;
+    const searchMatch =
+      name.includes(searchQuery) || specialty.includes(searchQuery);
+
+    if (categoryMatch && searchMatch) {
+      card.style.display = "block";
+      visibleCount++;
+    } else {
+      card.style.display = "none";
+    }
   });
 
-  doctorsGrid.innerHTML = filteredDoctors
-    .map(
-      (doctor) => `
-    <div class="doctor-card" data-category="${doctor.category}">
-      <img src="${doctor.image}" alt="${doctor.name}" class="doctor-image">
-      <div class="doctor-info">
-        <h3 class="doctor-name">${doctor.name}</h3>
-        <p class="doctor-specialty">${doctor.specialty}</p>
-      </div>
-    </div>
-  `
-    )
-    .join("");
-
-  if (filteredDoctors.length === 0) {
-    doctorsGrid.innerHTML = "<p class='no-results'>No doctors found.</p>";
-  }
-
-  // Re-initialize animation for new cards
-  animateOnScroll();
+  visibleCount === 0 ? showNoResults() : hideNoResults();
 }
 
-searchInputDynamic.addEventListener("input", renderDoctors);
+// Category button handler
+categoryBtns.forEach((btn) => {
+  btn.addEventListener("click", () => {
+    categoryBtns.forEach((b) => b.classList.remove("active"));
+    btn.classList.add("active");
+    filterDoctors();
+  });
+});
 
-// Initialize doctors section
-renderCategories();
-renderDoctors();
+// Search typing
+searchInput.addEventListener("keyup", filterDoctors);
+
+// Initialize
+filterDoctors();
 
 // ======================= SHOW MORE BUTTON ==========================
 document.querySelectorAll(".show-more-btn").forEach((btn) => {

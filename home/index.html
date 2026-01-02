@@ -485,22 +485,241 @@ Surger-Service.
   </section>
 
   <!-- Doctors Section -->
-   <section class="section doctors" id="doctors">
-  <div class="container">
-    <h2 class="section-title">Our Medical Experts</h2>
-    <p class="section-subtitle">Meet Our Team of Specialist Doctors</p>
-
-    <div class="search-container">
-      <input type="text" id="searchInput" class="search-input" placeholder="Search doctors by name or specialty...">
+  <section class="section doctors" id="doctors">
+    <div class="container">
+      <h2 class="section-title">Our Medical Experts</h2>
+      <p class="section-subtitle">Meet Our Team of Specialist Doctors</p>
+      
+      <div class="search-container">
+        <input type="text" id="searchInput" class="search-input" placeholder="Search doctors by name or specialty...">
+      </div>
+      
+      <div class="doctor-categories">
+        <button class="category-btn active" data-category="all">All Specialties</button>
+        <button class="category-btn" data-category="Obstetric & Gynecology">Obstetric & Gynecology</button>
+        <button class="category-btn" data-category="Paediatric">Paediatric</button>
+        <button class="category-btn" data-category="Neuro Medicine">Neurology</button>
+        <button class="category-btn" data-category="ENT-HNS">General Surgery</button>
+        <button class="category-btn" data-category="Cardiology">Dermatology</button>
+        <button class="category-btn" data-category="Ear">Ear, Nose and Thorat</button>
+         <button class="category-btn" data-category="Endocrinology">Endocrinology</button>
+          <button class="category-btn" data-category="PediatricSurgery">Pediatric Surgery</button>
+      </div>
+      
+      <div class="doctors-grid" id="doctorsGrid">
+        <!-- Obstetric & Gynecology Doctors -->
+        <div class="doctor-card" data-category="Obstetric & Gynecology">
+          <img src="../home/assets/Dr. Saraswati M. Padhye.jpeg">
+          <div class="doctor-info">
+            <h3 class="doctor-name">Prof. Dr. Saraswati M. Padhye</h3>
+            <p class="doctor-specialty">Obstetrician & Gynecologist</p>
+            <!-- <p class="doctor-qualification">MD, FRCOG</p>
+            <p class="doctor-experience">15+ years experience</p> -->
+          </div>
+        </div>
+        
+        <div class="doctor-card" data-category="Obstetric & Gynecology">
+          <img src="../home/assets/Dr. Sushila Shrestha.jpeg" alt="Dr. Maria Rodriguez" class="doctor-image">
+          <div class="doctor-info">
+            <h3 class="doctor-name">Dr. Sushila Shrestha</h3>
+            <p class="doctor-specialty">Obstetrician & Gynecologist</p>
+            <!-- <p class="doctor-qualification">MD, FACOG</p>
+            <p class="doctor-experience">12+ years experience</p> -->
+          </div>
+        </div>
+        <div class="doctor-card" data-category="Obstetric & Gynecology">
+          <img src="https://images.unsplash.com/photo-1612349317150-e413f6a5b16d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80" alt="Dr. Maria Rodriguez" class="doctor-image">
+          <div class="doctor-info">
+            <h3 class="doctor-name">Dr. Keshari Bajracharya</h3>
+            <p class="doctor-specialty">Obstetrician & Gynecologist</p>
+            <!-- <p class="doctor-qualification">MD, FACOG</p>
+            <p class="doctor-experience">12+ years experience</p> -->
+          </div>
+        </div>
+        <div class="doctor-card" data-category="Obstetric & Gynecology">
+          <img src="../home/assets/aboutus2.png">
+          <div class="doctor-info">
+            <h3 class="doctor-name"> Prof. Dr. Chanda Karki (Bhandari)</h3>
+            <p class="doctor-specialty">Obstetrician & Gynecologist</p>
+            <!-- <p class="doctor-qualification">MD, FACOG</p>
+            <p class="doctor-experience">12+ years experience</p> -->
+          </div>
+        </div>
+        <div class="doctor-card" data-category="Obstetric & Gynecology">
+          <img src="../home/assets/Dr. Bimala Malla.jpeg" alt="Dr. Maria Rodriguez" class="doctor-image">
+          <div class="doctor-info">
+            <h3 class="doctor-name">Dr. Bimala Malla</h3>
+            <p class="doctor-specialty">Obstetrician & Gynecologist</p>
+            <!-- <p class="doctor-qualification">MD, FACOG</p>
+            <p class="doctor-experience">12+ years experience</p> -->
+          </div>
+        </div>
+        <div class="doctor-card" data-category="Obstetric & Gynecology">
+          <img src="../home/assets/Dr. Sudha Thapa.jpeg" alt="Dr. Maria Rodriguez" class="doctor-image">
+          <div class="doctor-info">
+            <h3 class="doctor-name"> Dr. Sudha Thapa</h3>
+            <p class="doctor-specialty">Obstetrician & Gynecologist</p>
+            <!-- <p class="doctor-qualification">MD, FACOG</p>
+            <p class="doctor-experience">12+ years experience</p> -->
+          </div>
+        </div>
+        <div class="doctor-card" data-category="Obstetric & Gynecology">
+          <img src="../home/assets/Dr. Amila Shrestha.jpeg" alt="Dr. Maria Rodriguez" class="doctor-image">
+          <div class="doctor-info">
+            <h3 class="doctor-name"> Dr. Amila Shrestha</h3>
+            <p class="doctor-specialty">Obstetrician & Gynecologist</p>
+            <!-- <p class="doctor-qualification">MD, FACOG</p>
+            <p class="doctor-experience">12+ years experience</p> -->
+          </div>
+        </div>
+        <div class="doctor-card" data-category="Obstetric & Gynecology">
+          <img src="../home/assets/Dr. Dipti Shrestha.jpeg" alt="Dr. Maria Rodriguez" class="doctor-image">
+          <div class="doctor-info">
+            <h3 class="doctor-name">Dr. Dipti Shrestha</h3>
+            <p class="doctor-specialty">Obstetrician & Gynecologist</p>
+            <!-- <p class="doctor-qualification">MD, FACOG</p>
+            <p class="doctor-experience">12+ years experience</p> -->
+          </div>
+        </div>
+        <div class="doctor-card" data-category="Obstetric & Gynecology">
+          <img src="../home/assets/Dr. Rumina Malla.jpeg" alt="Dr. Maria Rodriguez" class="doctor-image">
+          <div class="doctor-info">
+            <h3 class="doctor-name">Dr. Rumina Malla</h3>
+            <p class="doctor-specialty">Obstetrician & Gynecologist</p>
+            <!-- <p class="doctor-qualification">MD, FACOG</p>
+            <p class="doctor-experience">12+ years experience</p> -->
+          </div>
+        </div>
+        <div class="doctor-card" data-category="Obstetric & Gynecology">
+          <img src="../home/assets/Dr. Rajlaxmi Sharma.jpeg" alt="Dr. Maria Rodriguez" class="doctor-image">
+          <div class="doctor-info">
+            <h3 class="doctor-name">Dr. Rajlaxmi Sharma</h3>
+            <p class="doctor-specialty">Obstetrician & Gynecologist</p>
+            <!-- <p class="doctor-qualification">MD, FACOG</p>
+            <p class="doctor-experience">12+ years experience</p> -->
+          </div>
+        </div>
+        <div class="doctor-card" data-category="Obstetric & Gynecology">
+          <img src="../home/assets/Dr. Noora Pradhan.jpeg" alt="Dr. Maria Rodriguez" class="doctor-image">
+          <div class="doctor-info">
+            <h3 class="doctor-name">Dr. Noora Pradhan</h3>
+            <p class="doctor-specialty">Obstetrician & Gynecologist</p>
+            <!-- <p class="doctor-qualification">MD, FACOG</p>
+            <p class="doctor-experience">12+ years experience</p> -->
+          </div>
+        </div>
+        <div class="doctor-card" data-category="Obstetric & Gynecology">
+          <img src="../home/assets/Dr. Prekshya Khatri.jpeg" alt="Dr. Maria Rodriguez" class="doctor-image">
+          <div class="doctor-info">
+            <h3 class="doctor-name"> Dr. Prekshya Khatri</h3>
+            <p class="doctor-specialty">Obstetrician & Gynecologist</p>
+            <!-- <p class="doctor-qualification">MD, FACOG</p>
+            <p class="doctor-experience">12+ years experience</p> -->
+          </div>
+        </div>
+        <div class="doctor-card" data-category="Obstetric & Gynecology">
+          <img src="../home/assets/Dr. Bibhuti Shahi.jpeg" alt="Dr. Maria Rodriguez" class="doctor-image">
+          <div class="doctor-info">
+            <h3 class="doctor-name"> Dr. Bibhuti shahi</h3>
+            <p class="doctor-specialty">Obstetrician & Gynecologist</p>
+            <!-- <p class="doctor-qualification">MD, FACOG</p>
+            <p class="doctor-experience">12+ years experience</p> -->
+          </div>
+        </div>
+        
+        <!-- Paediatric Doctors -->
+        <div class="doctor-card" data-category="Paediatric">
+          <img src="../home/assets/Dr. Shailendra B. Karmachary.jpeg" alt="Dr. Michael Chen" class="doctor-image">
+          <div class="doctor-info">
+            <h3 class="doctor-name">Dr. Shailendra B. karmachary</h3>
+            <p class="doctor-specialty">Pediatric</p>
+           
+          </div>
+        </div>
+        
+        <div class="doctor-card" data-category="Paediatric">
+          <img src="../home/assets/Dr. Deepa Khanal.jpeg" alt="Dr. Lisa Thompson" class="doctor-image">
+          <div class="doctor-info">
+            <h3 class="doctor-name">Dr. Deepa Khanal</h3>
+            <p class="doctor-specialty">Pediatric</p>
+            
+          </div>
+        </div>
+        
+        <!-- Neuro Medicine Doctors -->
+        <div class="doctor-card" data-category="Neuro Medicine">
+          <img src="../home/assets/Dr. Dipesh Shakya.jpeg" alt="Dr. Robert Williams" class="doctor-image">
+          <div class="doctor-info">
+            <h3 class="doctor-name">Dr. Dipesh Shakya</h3>
+            <p class="doctor-specialty">Neurologist</p>
+           
+          </div>
+        </div>
+        
+        <div class="doctor-card" data-category="Neuro Medicine">
+          <img src="../home/assets/Dr. Sandeep Kumar Jaisawal.jpeg" alt="Dr. Jennifer Lee" class="doctor-image">
+          <div class="doctor-info">
+            <h3 class="doctor-name">Dr. Sandeep Kumar Jaisawal</h3>
+            <p class="doctor-specialty">Neurologist</p>
+            
+          </div>
+        </div>
+        
+        <!-- ENT-HNS Doctors -->
+        <div class="doctor-card" data-category="ENT-HNS">
+          <img src="../home/assets/Dr. Rajlaxmi Sharma.jpeg" alt="Dr. David Kim" class="doctor-image">
+          <div class="doctor-info">
+            <h3 class="doctor-name">Prof. Dr. Mukunda Raj Joshi</h3>
+            <p class="doctor-specialty">General Surgery</p>
+          </div>
+        </div>
+        
+        <div class="doctor-card" data-category="ENT-HNS">
+          <img src="../home/assets/Dr. Manish Gautam.jpeg" alt="Dr. Amanda Patel" class="doctor-image">
+          <div class="doctor-info">
+            <h3 class="doctor-name">Dr. Manish Gautam</h3>
+            <p class="doctor-specialty">General Surgery</p>
+          </div>
+        </div>
+        
+        <!-- Cardiology Doctors -->
+        <div class="doctor-card" data-category="Cardiology">
+          <img src="../home/assets/Dr. Sabina Bhandari.jpeg" alt="Dr. James Wilson" class="doctor-image">
+          <div class="doctor-info">
+            <h3 class="doctor-name">Dr. Sabina Bhandari</h3>
+            <p class="doctor-specialty">Dermotology</p>
+           
+          </div>
+        </div>
+        
+        <!-- Orthopedics Doctors -->
+        <div class="doctor-card" data-category="Ear">
+          <img src="../home/assets/Dr. Deep Sijapati.jpeg" alt="Dr. Christopher Brown" class="doctor-image">
+          <div class="doctor-info">
+            <h3 class="doctor-name">Dr. Deep Sijapati</h3>
+            <p class="doctor-specialty">Orthopedic Surgeon</p>
+           
+          </div>
+        </div>
+        <div class="doctor-card" data-category="Endocrinology">
+          <img src="../home/assets/Dr. Deepak Poudel.jpeg" alt="Dr. Christopher Brown" class="doctor-image">
+          <div class="doctor-info">
+            <h3 class="doctor-name">Dr. Deepak Poudel</h3>
+            <p class="doctor-specialty">Endocrinology</p>
+           
+          </div>
+        </div>
+        <div class="doctor-card" data-category="PediatricSurgery">
+          <img src="https://images.unsplash.com/photo-1622253692010-333f2da6031d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=764&q=80" alt="Dr. Christopher Brown" class="doctor-image">
+          <div class="doctor-info">
+            <h3 class="doctor-name">Dr. Manish Pokhrel</h3>
+            <p class="doctor-specialty">PediatricSurgery</p>
+           
+          </div>
+        </div>
+      </div>
     </div>
-
-    <!-- Container for dynamically created category buttons -->
-    <div class="doctor-categories" id="categoriesContainer"></div>
-
-    <!-- Container for dynamically created doctor cards -->
-    <div class="doctors-grid" id="doctorsGrid"></div>
-  </div>
-</section>
+  </section>
 
   <!-- Appointment Section -->
   <section class="appointment-section" id="appointment">
