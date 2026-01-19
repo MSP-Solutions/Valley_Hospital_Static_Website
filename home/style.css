@@ -227,7 +227,6 @@
   box-shadow: 0px 2px 4px rgba(102, 102, 102, 0.25);
   width: 90%;
   max-width: 900px;
-
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -237,6 +236,7 @@
 /* Title smaller */
 .hero-title {
   font-size: 20px;
+  margin-top: 30px;
   font-weight: 700;
   color: #e2761f;
   margin-bottom: 6px;
@@ -254,6 +254,7 @@
 .stats-container {
   display: flex;
   gap: 5px;
+    margin-bottom: 30px;
 }
 
 .stat-item {
@@ -356,7 +357,7 @@
   overflow: hidden;
   box-shadow: var(--shadow-lg);
   height: 500px;
-  border-radius: 76px;
+  border-radius: 20px;
   width: 100%;
   object-fit: cover;
 }
@@ -544,7 +545,7 @@
         font-weight: 700;
         text-align: center;
         margin-bottom: 30px;
-        font-size: 1.2rem;
+        font-size: 1rem;
       }
       
       .package-pricing {
@@ -1080,7 +1081,10 @@
         color: var(--white);
         padding: 80px 0 0;
       }
-      
+      .footer .footer-content .footer-section .footerdescription {
+        color: var(--light);
+        line-height: 1.7;
+      }
       .footer-content {
         display: grid;
         grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
@@ -1720,7 +1724,7 @@ h1 {
    Leader Section
 ===================== */
 .leader {
-  margin-bottom: 80px;
+  margin-bottom: 60px;
 }
 
 .card {
@@ -1763,10 +1767,13 @@ h1 {
 
 .info p {
   font-size: 13px;
-  margin-top: 6px;
+  /* margin-top: 2px; */
   opacity: 0.9;
 }
-
+.info.primary{
+  width: 220px;
+  margin-left: 470px;
+}
 .info.primary h3 {
   font-size: 17px;
 }
@@ -1793,7 +1800,7 @@ h1 {
   max-width: 1200px;
   margin: 60px auto 0;
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: repeat(4, 1fr);
   gap: 50px 30px;
   justify-items: center;
 }
@@ -1811,7 +1818,7 @@ h1 {
 .hex-card .card {
   width: 180px;
   height: 220px;
-  border-radius: 18px;
+  border-radius: 12px;
 }
 
 /* Name label */
@@ -1822,8 +1829,10 @@ h1 {
   background: linear-gradient(135deg, #0b63b6, #083d73);
   color: white;
   font-size: 13px;
+  /* height: 32px; */
+  width: 220px;
   font-weight: 600;
-  border-radius: 999px;
+  border-radius: 12px;
   box-shadow: 0 6px 16px rgba(0, 0, 0, 0.15);
 }
 
