@@ -1772,7 +1772,7 @@ h1 {
 }
 .info.primary{
   width: 220px;
-  margin-left: 470px;
+  margin: 14px auto 0;
 }
 .info.primary h3 {
   font-size: 17px;
