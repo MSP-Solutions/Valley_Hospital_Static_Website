@@ -885,7 +885,11 @@
         transform: translateY(-10px);
         box-shadow: var(--shadow-lg);
       }
-      
+      .doctor-card img {
+        width: 100%;
+        height: 280px;
+        object-fit: cover;
+      } 
       .doctor-image {
         width: 100%;
         height: 280px;
