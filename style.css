@@ -1870,4 +1870,10 @@ h1 {
     width: 170px;
     height: 210px;
   }
+  .citizenCharter{
+     h1{
+      font-size: 22px;
+      color: #e7650d;
+     }
+  }
 }
