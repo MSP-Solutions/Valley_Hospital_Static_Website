@@ -1275,7 +1275,7 @@ button {
 /* --- 13. Why Choose Us Section (Custom Background & Orange Accents) --- */
 .why-choose-section {
   position: relative;
-  background: linear-gradient(rgba(255, 255, 255, 0.85), rgba(122, 20, 20, 0.9)), url('assets/whybg.jpg') center/cover no-repeat;
+  background: linear-gradient(rgba(255, 255, 255, 0.85), rgba(247, 248, 250, 0.9)), url('assets/whybg.jpg') center/cover no-repeat;
   padding: 65px 0;
 }
 
